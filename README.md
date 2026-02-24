@@ -71,3 +71,9 @@ export default defineConfig([
   },
 ])
 ```
+
+## Erişilebilirlik Raporu
+
+![Lighthouse Erişilebilirlik Puanı](./docs/lighthouse-report.png)
+
+Erişilebilirlik puanı: **92/100**
