@@ -7,10 +7,10 @@
 
 /* ===== TEMEL TİPOGRAFİ ===== */
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: #f5f5f5;
+  color: #1f2937; /* Koyu gri - daha iyi kontrast */
+  background-color: #f9fafb;
 }
 
 /* ===== SKIP LINK (Görünmez, Tab ile görünür) ===== */
@@ -18,12 +18,14 @@ body {
   position: absolute;
   top: -100px;
   left: 0;
-  background: #1E3A8A;
-  color: white;
-  padding: 8px 16px;
+  background: #1e40af; /* Koyu mavi */
+  color: #ffffff;
+  padding: 12px 20px;
   z-index: 100;
   text-decoration: none;
+  font-weight: 600;
   border-radius: 0 0 4px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .skip-link:focus {
@@ -32,21 +34,29 @@ body {
 
 /* ===== FOCUS GÖSTERGESİ (ASLA kaldırma!) ===== */
 :focus {
-  outline: 3px solid #2563EB;
-  outline-offset: 2px;
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
 }
 
 /* ===== HEADER ===== */
 header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 2rem;
+  background: linear-gradient(135deg, #1e3a8a 0%, #581c87 100%); /* Koyu renkler */
+  color: #ffffff;
+  padding: 2.5rem 2rem;
   text-align: center;
 }
 
 header h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+  color: #e0e7ff; /* Açık ama yeterli kontrastlı */
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 /* ===== NAVİGASYON ===== */
@@ -59,18 +69,24 @@ nav ul {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 nav a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
-nav a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+nav a:hover,
+nav a:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
 }
 
 /* ===== ANA İÇERİK ===== */
@@ -82,68 +98,116 @@ main {
 
 /* ===== BÖLÜMLER ===== */
 section {
-  background: white;
+  background: #ffffff;
   margin-bottom: 2rem;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
 }
 
 section h2 {
-  color: #667eea;
+  color: #1e3a8a; /* Koyu mavi - iyi kontrast */
   margin-bottom: 1.5rem;
-  font-size: 1.8rem;
+  font-size: 1.875rem;
+  font-weight: 700;
+  border-bottom: 3px solid #3b82f6;
+  padding-bottom: 0.5rem;
 }
 
 section h3 {
-  color: #764ba2;
+  color: #581c87; /* Koyu mor - iyi kontrast */
   margin: 1.5rem 0 1rem;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+section p {
+  color: #374151; /* Koyu gri */
+  margin-bottom: 1rem;
+}
+
+/* Liste stilleri */
+section ul {
+  margin-left: 1.5rem;
+  color: #374151;
+}
+
+section li {
+  margin-bottom: 0.5rem;
 }
 
 /* ===== HAKKIMDA BÖLÜMÜ ===== */
 figure {
   text-align: center;
-  margin: 1.5rem 0;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #f3f4f6;
+  border-radius: 12px;
 }
 
 figure img {
   border-radius: 50%;
-  border: 4px solid #667eea;
+  border: 4px solid #1e40af;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 figcaption {
-  margin-top: 0.5rem;
-  color: #666;
+  margin-top: 1rem;
+  color: #4b5563; /* Orta koyu gri */
   font-style: italic;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 /* ===== PROJELER ===== */
 article {
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
+  background: #fafafa;
+  transition: box-shadow 0.3s ease;
+}
+
+article:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+article h3 {
+  color: #1e40af; /* Koyu mavi */
+  margin-bottom: 0.75rem;
 }
 
 article img {
   width: 100%;
   height: auto;
-  border-radius: 4px;
+  border-radius: 8px;
   margin: 1rem 0;
+  border: 1px solid #d1d5db;
+}
+
+article p {
+  color: #4b5563;
+}
+
+article strong {
+  color: #1f2937;
 }
 
 /* ===== FORM STİLLERİ ===== */
 fieldset {
-  border: 1px solid #ddd;
-  padding: 1.5rem;
-  border-radius: 8px;
+  border: 2px solid #d1d5db;
+  padding: 2rem;
+  border-radius: 12px;
+  background: #fafafa;
 }
 
 legend {
-  font-weight: bold;
-  padding: 0 0.5rem;
-  color: #667eea;
+  font-weight: 700;
+  padding: 0 1rem;
+  color: #1e40af; /* Koyu mavi */
+  font-size: 1.125rem;
 }
 
 .form-group {
@@ -153,86 +217,126 @@ legend {
 label {
   display: block;
   margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: #555;
+  font-weight: 600;
+  color: #111827; /* Çok koyu gri - mükemmel kontrast */
+  font-size: 0.95rem;
 }
 
 input,
 textarea,
 select {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 0.875rem;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
   font-size: 1rem;
+  color: #1f2937;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-  border-color: #667eea;
+  border-color: #2563eb;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+/* Placeholder rengi */
+input::placeholder,
+textarea::placeholder {
+  color: #6b7280;
 }
 
 /* Hata mesajı alanları */
 .error-msg {
-  color: #dc2626;
+  color: #dc2626; /* Koyu kırmızı - iyi kontrast */
   font-size: 0.875rem;
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
   display: block;
   min-height: 1.2em;
+  font-weight: 500;
 }
 
 /* Zorunlu alan işareti */
-input:required:invalid:not(:placeholder-shown) {
+input:required:invalid:not(:placeholder-shown),
+textarea:required:invalid:not(:placeholder-shown),
+select:required:invalid {
   border-color: #dc2626;
+}
+
+input:required:valid,
+textarea:required:valid,
+select:required:valid {
+  border-color: #16a34a;
 }
 
 /* Gönder butonu */
 button[type="submit"] {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+  color: #ffffff;
+  padding: 1rem 2.5rem;
   border: none;
-  border-radius: 4px;
-  font-size: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-button[type="submit"]:hover {
+button[type="submit"]:hover,
+button[type="submit"]:focus {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 10px 20px rgba(30, 64, 175, 0.3);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
 }
 
 /* ===== FOOTER ===== */
 footer {
-  background: #333;
-  color: white;
+  background: #111827; /* Çok koyu gri/siyah */
+  color: #f9fafb;
   text-align: center;
-  padding: 2rem;
-  margin-top: 2rem;
+  padding: 2.5rem;
+  margin-top: 3rem;
+}
+
+footer p {
+  color: #d1d5db;
+  margin-bottom: 0.75rem;
 }
 
 footer a {
-  color: #667eea;
+  color: #60a5fa; /* Açık mavi ama koyu arka planla iyi kontrast */
   text-decoration: none;
+  font-weight: 600;
+  margin: 0 0.5rem;
+  transition: color 0.2s;
 }
 
-footer a:hover {
+footer a:hover,
+footer a:focus {
+  color: #93c5fd;
   text-decoration: underline;
 }
 
 /* ===== RESPONSİVE TASARIM ===== */
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   header h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+  
+  header p {
+    font-size: 1rem;
   }
   
   nav ul {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
   
   main {
@@ -240,6 +344,10 @@ footer a:hover {
   }
   
   section {
-    padding: 1rem;
+    padding: 1.5rem;
+  }
+  
+  fieldset {
+    padding: 1.5rem;
   }
 }

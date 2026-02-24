@@ -160,7 +160,7 @@ function App() {
       <footer>
         <p>&copy; 2025 Ahmet Yılmaz. Tüm hakları saklıdır.</p>
         <p>
-          <a href="https://github.com/kullaniciadin" aria-label="GitHub profilim">GitHub</a> | 
+          <a href="https://github.com/kullaniciadin" aria-label="GitHub profilimi yeni sekmede aç">GitHub</a> |  
           <a href="https://linkedin.com/in/kullaniciadin" aria-label="LinkedIn profilim">LinkedIn</a>
         </p>
       </footer>
